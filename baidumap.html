@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <title>百度地图-足迹</title>
+     <link href="css/paperpicture.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=TUaQdFgQ4GTsZjGGRCHWDCsx"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/library/CurveLine/1.5/src/CurveLine.min.js"></script>
+		<style type="text/css">
+		html,body,div{
+			width:100%;
+			height:100%;
+		}
+	</style>
+</head>
+<body>
+    <div style="text-align:center;width: 60%; height: 80%; " id="container"></div>
+    <div style="padding-top: 15px">
+            <div class="paper">
+                <h1>
+                   成长足迹 
+                </h1>
+                <p>
+                   &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    成长足迹
+                    成长足迹
+                </p>
+                <div>
+                  
+                </div>
+            </div>
+     </div>
+   
+</body>
+</html>
+<script type="text/javascript">
+
+    // 百度地图API功能
+    var map = new BMap.Map("container");
+    map.enableScrollWheelZoom();
+    var top_left_control = new BMap.ScaleControl({anchor: BMAP_ANCHOR_TOP_LEFT});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl();  //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT, type: BMAP_NAVIGATION_CONTROL_SMALL}); //右上角，仅包含平移和缩放按钮
+	/*缩放控件type有四种类型:
+	BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+	
+	
+    var Position1=new BMap.Point(117.072896,30.560287),//安庆-出生地
+		Position2=new BMap.Point(115.905242,28.702401),//南昌游玩
+		Position3=new BMap.Point(117.936994,31.65749),//巢湖读书
+		Position4=new BMap.Point(113.13185,23.017476),//佛山实习半年
+		Position5=new BMap.Point(118.883664,31.945898),//南京工作两年半
+		Position6=new BMap.Point(115.999528,29.676976),//庐山游玩三天
+		Position7=new BMap.Point(117.291651,31.877913);//下一个目的地：合肥?
+
+	var opts1 = {
+	  position : Position1,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label1 = new BMap.Label("1.安庆-出生地(1990年~至今)", opts1);
+	
+	var opts2 = {
+	  position : Position2,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label2 = new BMap.Label("2.南昌-游玩", opts2);
+	
+	var opts3 = {
+	  position : Position3,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label3 = new BMap.Label("3.巢湖学院-大学受教育四年(2008年~2012年)", opts3);
+	
+	var opts4 = {
+	  position : Position4,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label4 = new BMap.Label("4.佛山-大四实习半年(2011-11-01~2012-05-01)", opts4);
+	
+	var opts5 = {
+	  position : Position5,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label5 = new BMap.Label("5.南京-工作两年半(2012-07-01~至今)", opts5);
+	
+	var opts6 = {
+	  position : Position6,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label6 = new BMap.Label("6.庐山-三日游", opts6);
+	
+	var opts7 = {
+	  position : Position7,    // 指定文本标注所在的地理位置
+	  offset   : new BMap.Size(2, 0)    //设置文本偏移量
+	}
+	var label7 = new BMap.Label("7.合肥-？？？", opts7);
+	
+    // 编写自定义函数,创建标注
+    function addMarker(point){
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+    }
+ 
+	addMarker(Position1);
+    addMarker(Position2);
+    addMarker(Position3);
+    addMarker(Position4);
+    addMarker(Position5);
+    addMarker(Position6);
+    addMarker(Position7);
+
+    var points12 = [Position1,Position2];
+	var points23 = [Position2,Position3];
+	var points34 = [Position3,Position4];
+	var points45 = [Position4,Position5];
+	var points56 = [Position5,Position6];
+	var points67 = [Position5,Position7];
+	var polyline67 = new BMap.Polyline(points67, {strokeColor:"#00688B", strokeWeight:5, strokeOpacity:0.5});   //创建折线
+    var curve12 = new BMapLib.CurveLine(points12, {strokeColor:"#00FF7F", strokeWeight:4, strokeOpacity:0.4}); //创建弧线对象
+	var curve23 = new BMapLib.CurveLine(points23, {strokeColor:"#00EEEE", strokeWeight:5, strokeOpacity:0.5}); //创建弧线对象
+	var curve34 = new BMapLib.CurveLine(points34, {strokeColor:"#00CED1", strokeWeight:6, strokeOpacity:0.6}); //创建弧线对象
+	var curve45 = new BMapLib.CurveLine(points45, {strokeColor:"#00C5CD", strokeWeight:7, strokeOpacity:0.7}); //创建弧线对象
+	var curve56 = new BMapLib.CurveLine(points56, {strokeColor:"#008B8B", strokeWeight:8, strokeOpacity:0.8}); //创建弧线对象
+	//var curve67 = new BMapLib.CurveLine(points67, {strokeColor:"#00688B", strokeWeight:9, strokeOpacity:0.9}); //创建弧线对象
+	
+    //curve.enableEditing(); //开启编辑功能
+	/*
+    //开启两点轨迹移动动画 
+    var myIcon = new BMap.Icon("http://developer.baidu.com/map/jsdemo/img/Mario.png", new BMap.Size(32, 70), {    //小车图片
+        //offset: new BMap.Size(0, -5),    //相当于CSS精灵
+        imageOffset: new BMap.Size(0, 0)    //图片的偏移量。为了是图片底部中心对准坐标点。
+    });
+    var driving2 = new BMap.DrivingRoute(map, {renderOptions:{map: map, autoViewport: true}});    //驾车实例
+    driving2.search(Position5, Position7);    //显示一条公交线路
+
+    window.run = function (){
+        var driving = new BMap.DrivingRoute(map);    //驾车实例
+        driving.search(Position5, Position7);
+        driving.setSearchCompleteCallback(function(){
+            var pts = driving.getResults().getPlan(0).getRoute(0).getPath();    //通过驾车实例，获得一系列点的数组
+            var paths = pts.length;    //获得有几个点
+
+            var carMk = new BMap.Marker(pts[0],{icon:myIcon});
+            map.addOverlay(carMk);
+            i=0;
+            function resetMkPoint(i){
+                carMk.setPosition(pts[i]);
+                if(i < paths){
+                    setTimeout(function(){
+                        i++;
+                        resetMkPoint(i);
+                    },1);
+                }
+            }
+            setTimeout(function(){
+                resetMkPoint(5);
+            },1)
+
+        });
+    }
+
+    setTimeout(function(){
+        run();
+    },5);
+	*/
+    map.centerAndZoom(new BMap.Point(117.072896,30.560287), 8);
+    map.addOverlay(curve12); //添加到地图中
+	map.addOverlay(curve23); //添加到地图中
+	map.addOverlay(curve34); //添加到地图中
+	map.addOverlay(curve45); //添加到地图中
+	map.addOverlay(curve56); //添加到地图中
+	map.addOverlay(polyline67); //添加到地图中
+	map.addOverlay(label1); 
+	map.addOverlay(label2); 
+	map.addOverlay(label3); 
+	map.addOverlay(label4); 
+	map.addOverlay(label5); 
+	map.addOverlay(label6); 
+	map.addOverlay(label7); 
+//添加控件和比例尺
+
+	map.addControl(top_left_control);        
+	map.addControl(top_left_navigation);     
+	map.addControl(top_right_navigation);    
+
+</script>
