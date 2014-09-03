@@ -496,36 +496,36 @@
             //.NET
         function addslide() {
             $('#sample-pb .number-NET').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(75)
             });
 
             //JAVA
 
             $('#sample-pb .number-JAVA').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(45)
             });
             //PHP
 
             $('#sample-pb .number-PHP').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(45)
             });
 
             $('#sample-pb .number-HTML5').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(65)
             });
             //CSS
 
             $('#sample-pb .number-CSS').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(65)
             });
             //JAVASCRIPT
             $('#sample-pb .number-JAVASCRIPT').NumberProgressBar({
-                duration: 1200,
+                duration: 12000,
                 current: Math.floor(70)
             });
         }
