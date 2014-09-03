@@ -41,21 +41,21 @@
                 </svg>
             </div>
         </header>
-        <div style="text-align: right; padding-right: 10%; padding-top: 300px; padding-bottom: 3px">
+        <div style="text-align: right; padding-right: 10%; padding-top: 300px; padding-bottom: 0px">
             <a href="https://github.com/FreeFunCode" target="_blank">
-                <img src="img/github.png" alt="github"  style="width: 32px; height: 32px; cursor: pointer" /></a>
+                <img src="img/github.png" alt="github"  style="width: 16px; height: 16px; cursor: pointer" /></a>
             <a href="http://www.cnblogs.com/bugzone/" target="_blank">
-                <img src="img/blog.png" alt="博客园" style="width: 32px; height: 32px; cursor: pointer" /></a>
+                <img src="img/blog.png" alt="博客园" style="width: 16px; height: 16px; cursor: pointer" /></a>
             <a href="http://onme.sinaapp.com/" target="_blank">
-                <img src="img/sinalogo.png" alt="新浪应用" style="width: 45px; height: 32px; cursor: pointer" /></a>
+                <img src="img/sinalogo.png" alt="新浪应用" style="width: 24px; height: 16px; cursor: pointer" /></a>
             <a href="http://imgwall.jd-app.com/" target="_blank">
-                <img src="img/jcloud_logo.png" alt="京东应用" style="width: 45px; height: 32px; cursor: pointer" /></a>
+                <img src="img/jcloud_logo.png" alt="京东应用" style="width: 24px; height: 16px; cursor: pointer" /></a>
             <a href="http://weibo.com/230689567/" target="_blank">
-                <img src="img/sina.png" alt="新浪微博" style="width: 32px; height: 32px; cursor: pointer" /></a>
+                <img src="img/sina.png" alt="新浪微博" style="width: 16px; height: 16px; cursor: pointer" /></a>
             <a href="http://wpa.qq.com/msgrd?v=1&uin=519396085&site=qq&menu=yes" target="_blank">
-                <img src="img/qq.png" alt="找作者聊天" style="width: 32px; height: 32px; cursor: pointer" /></a>
+                <img src="img/qq.png" alt="找作者聊天" style="width: 16px; height: 16px; cursor: pointer" /></a>
         </div>
-        <div>
+        <div style="padding-top:0px">
             <div class="paper">
                 <h1>关于我自己</h1>
                 <p>
@@ -496,36 +496,36 @@
             //.NET
         function addslide() {
             $('#sample-pb .number-NET').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(75)
             });
 
             //JAVA
 
             $('#sample-pb .number-JAVA').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(45)
             });
             //PHP
 
             $('#sample-pb .number-PHP').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(45)
             });
 
             $('#sample-pb .number-HTML5').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(65)
             });
             //CSS
 
             $('#sample-pb .number-CSS').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(65)
             });
             //JAVASCRIPT
             $('#sample-pb .number-JAVASCRIPT').NumberProgressBar({
-                duration: 12000,
+                duration: 1200,
                 current: Math.floor(70)
             });
         }
@@ -552,8 +552,13 @@
 		Position3 = new BMap.Point(117.936994, 31.65749),//巢湖读书
 		Position4 = new BMap.Point(113.13185, 23.017476),//佛山实习半年
 		Position5 = new BMap.Point(118.883664, 31.945898),//南京工作两年半
-		Position6 = new BMap.Point(115.999528, 29.676976),//庐山游玩三天
-		Position7 = new BMap.Point(117.291651, 31.877913);//下一个目的地：合肥?
+		Position6 = new BMap.Point(121.541139,31.232103),//上海游玩三天
+		Position7 = new BMap.Point(119.800295,33.471934),//建湖出差
+		Position8 = new BMap.Point(113.671983,34.753741),//郑州出差
+		Position9 = new BMap.Point(113.203427,33.771837),//平顶山出差
+		Position10 = new BMap.Point(112.343065,33.789361),//荛山滑雪
+		Position11 = new BMap.Point(115.999528, 29.676976),//庐山游玩三天
+		Position12 = new BMap.Point(117.291651, 31.877913);//下一个目的地：合肥?
 
     var opts1 = {
         position: Position1,    // 指定文本标注所在的地理位置
@@ -585,17 +590,47 @@
     }
     var label5 = new BMap.Label("5.南京-工作两年半(2012-07-01~至今)", opts5);
 
-    var opts6 = {
+	var opts6 = {
         position: Position6,    // 指定文本标注所在的地理位置
         offset: new BMap.Size(2, 0)    //设置文本偏移量
     }
-    var label6 = new BMap.Label("6.庐山-三日游", opts6);
+    var label6 = new BMap.Label("6.上海游玩", opts6);
 
-    var opts7 = {
+	var opts7 = {
         position: Position7,    // 指定文本标注所在的地理位置
         offset: new BMap.Size(2, 0)    //设置文本偏移量
     }
-    var label7 = new BMap.Label("7.合肥-？？？", opts7);
+    var label7 = new BMap.Label("7.建湖出差", opts7);
+
+	var opts8 = {
+        position: Position8,    // 指定文本标注所在的地理位置
+        offset: new BMap.Size(2, 0)    //设置文本偏移量
+    }
+    var label8 = new BMap.Label("8.郑州出差", opts8);
+
+	var opts9 = {
+        position: Position9,    // 指定文本标注所在的地理位置
+        offset: new BMap.Size(2, 0)    //设置文本偏移量
+    }
+    var label9 = new BMap.Label("9.平顶山出差", opts9);
+
+	var opts10 = {
+        position: Position10,    // 指定文本标注所在的地理位置
+        offset: new BMap.Size(2, 0)    //设置文本偏移量
+    }
+    var label10 = new BMap.Label("10.荛山滑雪", opts10);
+
+    var opts11 = {
+        position: Position11,    // 指定文本标注所在的地理位置
+        offset: new BMap.Size(2, 0)    //设置文本偏移量
+    }
+    var label11 = new BMap.Label("11.庐山-三日游", opts11);
+
+    var opts12 = {
+        position: Position12,    // 指定文本标注所在的地理位置
+        offset: new BMap.Size(2, 0)    //设置文本偏移量
+    }
+    var label12 = new BMap.Label("12.合肥-？？？", opts12);
 
     // 编写自定义函数,创建标注
     function addMarker(point) {
@@ -611,19 +646,36 @@
     addMarker(Position5);
     addMarker(Position6);
     addMarker(Position7);
+	addMarker(Position8);
+	addMarker(Position9);
+	addMarker(Position10);
+	addMarker(Position11);
+	addMarker(Position12);
+
 
     var points12 = [Position1, Position2];
     var points23 = [Position2, Position3];
     var points34 = [Position3, Position4];
     var points45 = [Position4, Position5];
     var points56 = [Position5, Position6];
-    var points67 = [Position5, Position7];
-    var polyline67 = new BMap.Polyline(points67, { strokeColor: "#00688B", strokeWeight: 5, strokeOpacity: 0.5 });   //创建折线
+    var points57 = [Position5, Position7];
+	var points58 = [Position5, Position8];
+	var points59 = [Position5, Position9];
+	var points510 = [Position5, Position10];
+	var points511 = [Position5, Position11];
+	var points512 = [Position5, Position12];
+ //   var polyline512 = new BMap.Polyline(points67, { strokeColor: "#00688B", strokeWeight: 5, strokeOpacity: 0.5 });   //创建折线
     var curve12 = new BMapLib.CurveLine(points12, { strokeColor: "#00FF7F", strokeWeight: 4, strokeOpacity: 0.4 }); //创建弧线对象
     var curve23 = new BMapLib.CurveLine(points23, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
     var curve34 = new BMapLib.CurveLine(points34, { strokeColor: "#00CED1", strokeWeight: 6, strokeOpacity: 0.6 }); //创建弧线对象
     var curve45 = new BMapLib.CurveLine(points45, { strokeColor: "#00C5CD", strokeWeight: 7, strokeOpacity: 0.7 }); //创建弧线对象
     var curve56 = new BMapLib.CurveLine(points56, { strokeColor: "#008B8B", strokeWeight: 8, strokeOpacity: 0.8 }); //创建弧线对象
+	var curve57 = new BMapLib.CurveLine(points57, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
+	var curve58 = new BMapLib.CurveLine(points58, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
+	var curve59 = new BMapLib.CurveLine(points59, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
+	var curve510 = new BMapLib.CurveLine(points510, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
+	var curve511 = new BMapLib.CurveLine(points511, { strokeColor: "#00EEEE", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
+	var curve512 = new BMapLib.CurveLine(points512, { strokeColor: "#00C5CD", strokeWeight: 5, strokeOpacity: 0.5 }); //创建弧线对象
     //var curve67 = new BMapLib.CurveLine(points67, {strokeColor:"#00688B", strokeWeight:9, strokeOpacity:0.9}); //创建弧线对象
 
     //curve.enableEditing(); //开启编辑功能
@@ -666,13 +718,19 @@
         run();
     },5);
 	*/
-    map.centerAndZoom(new BMap.Point(117.072896, 30.560287), 8);
+    map.centerAndZoom(new BMap.Point(117.072896, 30.560287), 7);
     map.addOverlay(curve12); //添加到地图中
     map.addOverlay(curve23); //添加到地图中
     map.addOverlay(curve34); //添加到地图中
     map.addOverlay(curve45); //添加到地图中
     map.addOverlay(curve56); //添加到地图中
-    map.addOverlay(polyline67); //添加到地图中
+	map.addOverlay(curve57); //添加到地图中
+	map.addOverlay(curve58); //添加到地图中
+	map.addOverlay(curve59); //添加到地图中
+	map.addOverlay(curve510); //添加到地图中
+	map.addOverlay(curve511); //添加到地图中
+	map.addOverlay(curve512); //添加到地图中
+ //   map.addOverlay(polyline67); //添加到地图中
     map.addOverlay(label1);
     map.addOverlay(label2);
     map.addOverlay(label3);
@@ -680,6 +738,11 @@
     map.addOverlay(label5);
     map.addOverlay(label6);
     map.addOverlay(label7);
+	map.addOverlay(label8);
+	map.addOverlay(label9);
+	map.addOverlay(label10);
+	map.addOverlay(label11);
+	map.addOverlay(label12);
     //添加控件和比例尺
 
     map.addControl(top_left_control);
